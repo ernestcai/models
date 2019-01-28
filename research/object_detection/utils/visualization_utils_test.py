@@ -319,7 +319,7 @@ class VisualizationUtilsTest(tf.test.TestCase):
     with self.test_session() as sess:
       sess.run(tf.global_variables_initializer())
       value_ops = {}
-      for key, (value_op, _) in metric_ops.iteritems():
+      for key, (value_op, _) in metric_ops.items():
         value_ops[key] = value_op
 
       # First run enough update steps to surpass `max_examples_to_draw`.
@@ -340,7 +340,7 @@ class VisualizationUtilsTest(tf.test.TestCase):
                                    [6 + i, 7 + i, 3], [6 + i, 7 + i, 3]]
             })
       value_ops_out = sess.run(value_ops)
-      for key, value_op in value_ops_out.iteritems():
+      for key, value_op in value_ops_out.items():
         self.assertNotEqual('', value_op)
 
       # Now run fewer update steps than `max_examples_to_draw`. A single value

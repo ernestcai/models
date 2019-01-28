@@ -37,7 +37,7 @@ def _update_dict(initial_dict, update):
    update: updated dictionary.
   """
 
-  for key, value_list in update.iteritems():
+  for key, value_list in update.items():
     if key in initial_dict:
       initial_dict[key].extend(value_list)
     else:
@@ -72,7 +72,7 @@ def _build_plain_hierarchy(hierarchy, skip_root=False):
   if not skip_root:
     all_keyed_parent[hierarchy['LabelName']] = all_children
     all_children = [hierarchy['LabelName']] + all_children
-    for child, _ in all_keyed_child.iteritems():
+    for child, _ in all_keyed_child.items():
       all_keyed_child[child].append(hierarchy['LabelName'])
     all_keyed_child[hierarchy['LabelName']] = []
 

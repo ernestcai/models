@@ -252,12 +252,12 @@ class VRDDetectionEvaluator(object_detection_evaluation.DetectionEvaluator):
             recall_100,
     }
     if relationships:
-      for key, average_precision in average_precisions.iteritems():
+      for key, average_precision in average_precisions.items():
         vrd_metrics[self._metric_prefix + 'AP@{}IOU/{}'.format(
             self._matching_iou_threshold,
             relationships[key])] = average_precision
     else:
-      for key, average_precision in average_precisions.iteritems():
+      for key, average_precision in average_precisions.items():
         vrd_metrics[self._metric_prefix + 'AP@{}IOU/{}'.format(
             self._matching_iou_threshold, key)] = average_precision
 
@@ -547,7 +547,7 @@ class _VRDDetectionEvaluation(object):
       relation_field_values = np.concatenate(self._relation_field_values)
 
     for relation_field_value, _ in (
-        self._num_gt_instances_per_relationship.iteritems()):
+        self._num_gt_instances_per_relationship.items()):
       precisions, recalls = metrics.compute_precision_recall(
           scores[relation_field_values == relation_field_value],
           tp_fp_labels[relation_field_values == relation_field_value],

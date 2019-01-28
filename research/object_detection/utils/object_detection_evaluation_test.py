@@ -813,7 +813,7 @@ class ObjectDetectionEvaluatorTest(tf.test.TestCase, parameterized.TestCase):
 
     with self.test_session() as sess:
       metrics = {}
-      for key, (value_op, _) in metric_ops.iteritems():
+      for key, (value_op, _) in metric_ops.items():
         metrics[key] = value_op
       sess.run(update_op)
       metrics = sess.run(metrics)

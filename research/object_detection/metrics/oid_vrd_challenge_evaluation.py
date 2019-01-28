@@ -74,7 +74,7 @@ def _swap_labelmap_dict(labelmap_dict):
   Returns:
     A dictionary mapping class name to class numerical id.
   """
-  return dict((v, k) for k, v in labelmap_dict.iteritems())
+  return dict((v, k) for k, v in labelmap_dict.items())
 
 
 def main(parsed_args):
